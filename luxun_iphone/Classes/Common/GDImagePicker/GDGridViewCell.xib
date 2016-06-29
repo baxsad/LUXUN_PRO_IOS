@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MiK-PH-qd6" customClass="GDGridViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IUa-mG-fhb">
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="106"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_def_previewVc.png" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-aS-x1y">
+                        <rect key="frame" x="82" y="3" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="95y-ih-o2w"/>
+                            <constraint firstAttribute="width" constant="25" id="qrj-ek-YrO"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-R2-Q5i">
+                        <rect key="frame" x="60" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="faW-AB-AyC"/>
+                            <constraint firstAttribute="height" constant="50" id="x0h-H0-HuA"/>
+                        </constraints>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="uyC-R2-Q5i" firstAttribute="top" secondItem="MiK-PH-qd6" secondAttribute="top" id="BVg-fz-yqY"/>
+                <constraint firstItem="IUa-mG-fhb" firstAttribute="top" secondItem="MiK-PH-qd6" secondAttribute="top" id="C27-FS-sxT"/>
+                <constraint firstItem="e6U-aS-x1y" firstAttribute="top" secondItem="MiK-PH-qd6" secondAttribute="top" constant="3" id="JzB-qd-EJB"/>
+                <constraint firstItem="uyC-R2-Q5i" firstAttribute="width" secondItem="IUa-mG-fhb" secondAttribute="height" multiplier="25:53" id="Kj1-uc-oom"/>
+                <constraint firstAttribute="bottom" secondItem="IUa-mG-fhb" secondAttribute="bottom" id="PLz-VO-69G"/>
+                <constraint firstAttribute="trailing" secondItem="e6U-aS-x1y" secondAttribute="trailing" constant="3" id="bZ3-HY-fnw"/>
+                <constraint firstAttribute="trailing" secondItem="IUa-mG-fhb" secondAttribute="trailing" id="dcH-ZW-4Vu"/>
+                <constraint firstItem="IUa-mG-fhb" firstAttribute="leading" secondItem="MiK-PH-qd6" secondAttribute="leading" id="rkE-Rr-bem"/>
+                <constraint firstAttribute="trailing" secondItem="uyC-R2-Q5i" secondAttribute="trailing" id="yve-WO-zkX"/>
+            </constraints>
+            <size key="customSize" width="110" height="106"/>
+            <connections>
+                <outlet property="imageView" destination="IUa-mG-fhb" id="JC6-CX-idU"/>
+                <outlet property="selectButton" destination="uyC-R2-Q5i" id="EOu-ml-BWC"/>
+                <outlet property="selectIcon" destination="e6U-aS-x1y" id="57U-Hz-rTK"/>
+            </connections>
+            <point key="canvasLocation" x="302" y="292"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="photo_def_previewVc.png" width="27" height="27"/>
+    </resources>
+</document>
