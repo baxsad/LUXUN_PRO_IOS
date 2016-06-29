@@ -29,6 +29,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTopicListCell" bundle:nil] forCellReuseIdentifier:@"LXTopicListCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTopicOneCell" bundle:nil] forCellReuseIdentifier:@"LXTopicOneCell"];
     
