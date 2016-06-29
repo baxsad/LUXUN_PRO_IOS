@@ -23,6 +23,12 @@
 
 @implementation LXSquareScene
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     @weakify(self);
@@ -30,6 +36,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTopicListCell" bundle:nil] forCellReuseIdentifier:@"LXTopicListCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LXTopicOneCell" bundle:nil] forCellReuseIdentifier:@"LXTopicOneCell"];
     

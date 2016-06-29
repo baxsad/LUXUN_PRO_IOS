@@ -77,6 +77,7 @@ static CGSize itemSize;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    Bangumi * b = _model.bangumiModels[indexPath.item];
+    [[GDRouter sharedInstance] open:@"luxun://player" extraParams:@{@"bangumi":b}];
 }
 @end
