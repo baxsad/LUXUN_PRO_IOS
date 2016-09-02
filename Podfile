@@ -13,6 +13,7 @@ target 'luxun_iphone' do
     pod 'IQKeyboardManager', '~> 3.2.3'
     pod 'ZFPlayer'
     pod 'WeiboSDK', '~> 3.1.3'
+    pod 'BarrageRenderer'
 end
 
 

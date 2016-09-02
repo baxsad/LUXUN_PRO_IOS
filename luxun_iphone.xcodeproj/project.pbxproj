@@ -16,6 +16,7 @@
 		1A38C48D1D12974700036191 /* LXTopicOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A38C48B1D12974700036191 /* LXTopicOneCell.xib */; };
 		1A9D08EC1D10F5060080C3C6 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D08E81D10F5060080C3C6 /* DataCenter.m */; };
 		1A9D08ED1D10F5060080C3C6 /* LXRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D08EB1D10F5060080C3C6 /* LXRequest.m */; };
+		1AA332E21D656AB800198346 /* DanMu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA332E11D656AB800198346 /* DanMu.m */; };
 		4F7F16C5621B1924F8F9768E /* libPods-luxun_iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A8B143070088EEED18CB7B /* libPods-luxun_iphone.a */; };
 		A01EFC1B1CC4AEA300CD41EA /* HJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = A01EFC1A1CC4AEA300CD41EA /* HJCornerRadius.m */; };
 		A0323B351CC5C696004421A9 /* BangumiFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0323B341CC5C696004421A9 /* BangumiFrameModel.m */; };
@@ -176,6 +177,8 @@
 		1A9D08E91D10F5060080C3C6 /* LISTEN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LISTEN.h; sourceTree = "<group>"; };
 		1A9D08EA1D10F5060080C3C6 /* LXRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXRequest.h; sourceTree = "<group>"; };
 		1A9D08EB1D10F5060080C3C6 /* LXRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXRequest.m; sourceTree = "<group>"; };
+		1AA332E01D656AB800198346 /* DanMu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DanMu.h; sourceTree = "<group>"; };
+		1AA332E11D656AB800198346 /* DanMu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanMu.m; sourceTree = "<group>"; };
 		A01EFC191CC4AEA300CD41EA /* HJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCornerRadius.h; sourceTree = "<group>"; };
 		A01EFC1A1CC4AEA300CD41EA /* HJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCornerRadius.m; sourceTree = "<group>"; };
 		A0323B331CC5C696004421A9 /* BangumiFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BangumiFrameModel.h; sourceTree = "<group>"; };
@@ -791,6 +794,8 @@
 				A0E270811CC24C3100974807 /* Bangumis.m */,
 				A0323B331CC5C696004421A9 /* BangumiFrameModel.h */,
 				A0323B341CC5C696004421A9 /* BangumiFrameModel.m */,
+				1AA332E01D656AB800198346 /* DanMu.h */,
+				1AA332E11D656AB800198346 /* DanMu.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1458,6 +1463,7 @@
 				A05457021CC75CF1007EF08D /* MBSwitch.m in Sources */,
 				A0E2701B1CC2355B00974807 /* UIDevice+HYSCat.m in Sources */,
 				A0E270601CC2355B00974807 /* MFJSettingGroup.m in Sources */,
+				1AA332E21D656AB800198346 /* DanMu.m in Sources */,
 				A01EFC1B1CC4AEA300CD41EA /* HJCornerRadius.m in Sources */,
 				A0A930861CCA134E004A9EB6 /* GDBarrageElement.m in Sources */,
 				A0E26E9D1CC2352C00974807 /* ViewController.m in Sources */,

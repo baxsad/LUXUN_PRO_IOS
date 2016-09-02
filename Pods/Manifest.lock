@@ -14,11 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - BarrageRenderer (1.8.1)
   - IQKeyboardManager (3.2.4)
   - JSONModel (1.2.0)
   - Masonry (0.6.4)
   - MBProgressHUD (0.9.2)
-  - MJRefresh (3.1.0)
+  - MJRefresh (3.1.12)
   - PXAlertView (0.1.1)
   - ReactiveCocoa (2.4.7):
     - ReactiveCocoa/UI (= 2.4.7)
@@ -30,11 +31,11 @@ PODS:
   - UITableView+FDTemplateLayoutCell (1.5.beta)
   - WeiboSDK (3.1.3)
   - YYCache (1.0.3)
-  - YYImage (1.0.2):
-    - YYImage/Core (= 1.0.2)
-  - YYImage/Core (1.0.2)
+  - YYImage (1.0.3):
+    - YYImage/Core (= 1.0.3)
+  - YYImage/Core (1.0.3)
   - YYText (1.0.5)
-  - YYWebImage (1.0.3):
+  - YYWebImage (1.0.4):
     - YYCache
     - YYImage
   - ZFPlayer (1.1.0):
@@ -42,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
+  - BarrageRenderer
   - IQKeyboardManager (~> 3.2.3)
   - JSONModel (~> 1.2.0)
   - Masonry (~> 0.6.4)
@@ -57,21 +59,22 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  BarrageRenderer: a5dc2c9d38028be819b64ed2b7dfa240490b378a
   IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PXAlertView: bb8a7e6bb95f73fe3fe091cacd279b683460f084
   ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
   UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
   WeiboSDK: acb067053668102cf07d01aa7604350162c2e466
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
-  YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
+  YYImage: 362f44ffba1fc498f2152060f3bb54ed84600981
   YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
-  YYWebImage: 8da75a611fd0d2e0f58a273f9ca0bc731614cb0d
+  YYWebImage: 0431ed108e104527669b86f75efd58958425cca2
   ZFPlayer: 326ce3f64be0be583d0a9e5e334659ba2e3c5e7f
 
-PODFILE CHECKSUM: 44b56b97ad1d01b45f2a48881c78a2d27ada2388
+PODFILE CHECKSUM: e495946e7ef192728e886b6253d9c270794fad1d
 
 COCOAPODS: 1.0.1

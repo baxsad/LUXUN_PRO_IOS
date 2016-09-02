@@ -60,6 +60,7 @@
     self.HOST                   = nil;
     self.PATH                   = @"";
     self.APPENDPATH             = @"";
+    self.APPENDURL              = @"";
     self.STATICPATH             = @"";
     self.needCheckCode          = NO;
     self.responseSerializer     = GDResponseSerializerTypeJSON;

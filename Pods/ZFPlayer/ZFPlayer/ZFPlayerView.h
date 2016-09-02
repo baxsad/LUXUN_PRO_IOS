@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
 @protocol ZFPlayerDelegate <NSObject>
 
 - (void)ZFPlayer:(ZFPlayerView *)player stateChanged:(ZFPlayerState)state;
+- (void)ZFPlayer:(ZFPlayerView *)player timeChanged:(NSTimeInterval)time;
 
 @end
 

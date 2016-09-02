@@ -51,7 +51,7 @@
 + (GDReq *)getDanMuRequest
 {
     GDReq * req = [GDReq Request];
-    req.STATICPATH = @"http://api.luxun.pro/?dm/lx:";
+    req.STATICPATH = @"http://0.luxun.pro:163/?dm/lx:";
     req.responseSerializer = GDResponseSerializerTypeJSON;
     req.httpHeaderFields = @{@"Referer" : Referer};
     return req;

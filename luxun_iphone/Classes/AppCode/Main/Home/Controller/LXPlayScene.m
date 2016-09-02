@@ -9,6 +9,7 @@
 #import "LXPlayScene.h"
 #import <ZFPlayer/ZFPlayer.h>
 #import "Bangumis.h"
+#import "DanMu.h"
 #import "UIViewController+GD.h"
 #import "LXBangumiInfoCell.h"
 #import "LXBangumiSetsCell.h"
@@ -16,6 +17,7 @@
 #import "LXContentsInputView.h"
 #import "LXTableView.h"
 #import "MBSwitch.h"
+#import <BarrageRenderer/BarrageRenderer.h>
 
 #define KPlayerHeight SCREEN_WIDTH*(9.0f/16.0f) /*> 视频播放器的高度 */
 #define KPlayerToolBarHeight 45.0f /*> 视频播放器底部工具条的高度 */
@@ -23,7 +25,10 @@
 #define kDMTextFieldHeight 30.0f  /*> 弹幕输入框的高度 */
 
 @interface LXPlayScene ()<UITableViewDelegate,UITableViewDataSource,LXBangumiSetSelectDelegate,UITextFieldDelegate,NSURLSessionDelegate,ZFPlayerDelegate>
-
+{
+    BarrageRenderer * _renderer;
+    NSInteger duration;
+}
 @property (nonatomic, strong) GDReq *getDmRequest;
 @property (nonatomic, strong) UIView *playerBackgroundView;
 @property (nonatomic, strong) ZFPlayerView *playerView;
@@ -40,6 +45,7 @@
 @property (nonatomic,   copy) NSString *videoUrl;
 @property (nonatomic, strong) NSArray * hostSource;
 @property (nonatomic, assign) NSInteger setNumber;
+@property (nonatomic, strong) DanMu * danMu;
 
 @end
 
@@ -95,6 +101,12 @@
     _danmakuTextField.delegate = self;
     
     /**
+     * 初始弹幕
+     */
+    _renderer = [[BarrageRenderer alloc] init];
+    _renderer.canvasMargin = UIEdgeInsetsMake(0, 0, 0, 0);
+    
+    /**
      * 初始视频源
      */
     luxunSay(@"鲁迅追番：初始化视频源数组");
@@ -138,9 +150,11 @@
     [self.view addSubview:_playerView];
     [self.view addSubview:_playerToolBarView];
     [self.view addSubview:_tableView];
+    [self.playerView addSubview:_renderer.view];
     [self.playerToolBarView addSubview:_danmakuTextField];
     [self setupTool];
     [self layout:LXScreenDirectionVertical];
+    [_renderer start];
     
     _playerView.delegate = self;
     if (_bangumi.cur && _bangumi.sets.count > 0) {
@@ -176,6 +190,23 @@
         luxunSay(@"❌关闭了视频：《%@》的播放",self.bangumi.title);
     };
     
+    [self getDM];
+}
+
+#pragma mark 生成精灵描述 - 过场文字弹幕
+
+- (BarrageDescriptor *)walkTextSpriteDescriptorWithDirection:(NSInteger)direction DanMuData:(DanMuData *)data
+{
+    BarrageDescriptor * descriptor = [[BarrageDescriptor alloc]init];
+    descriptor.spriteName = NSStringFromClass([BarrageWalkTextSprite class]);
+    descriptor.params[@"text"] = data.title;
+    descriptor.params[@"textColor"] = data.color;
+    descriptor.params[@"speed"] = @(100 * (double)random()/RAND_MAX+50);
+    descriptor.params[@"direction"] = @(direction);
+    descriptor.params[@"clickAction"] = ^{
+        
+    };
+    return descriptor;
 }
 
 #pragma mark 获取弹幕数据请求
@@ -183,11 +214,12 @@
 - (void)getDM
 {
     self.getDmRequest = [LXRequest getDanMuRequest];
-    self.getDmRequest.APPENDPATH = [NSString stringWithFormat:@"%@%@",_bangumi.title,_bangumi.cur].urlEncode;
+    self.getDmRequest.APPENDURL = [NSString stringWithFormat:@"%@%@",_bangumi.title,_bangumi.cur].urlEncode;
     self.getDmRequest.requestNeedActive = YES;
     [self.getDmRequest listen:^(GDReq * _Nonnull req) {
         if (req.succeed) {
-            NSLog(@"%@",req.output);
+            DanMu * dm = [[[DanMu alloc] initWithDictionary:@{@"danmuList":req.output} error:nil] setUp];
+            self.danMu = dm;
         }
         if (req.failed) {
             NSLog(@"%@",req.error);
@@ -280,6 +312,23 @@
             
         default:
             break;
+    }
+}
+
+- (void)ZFPlayer:(ZFPlayerView *)player timeChanged:(NSTimeInterval)time
+{
+    if (self.danMu && self.danMu.danmuList.count>0) {
+        if ([[NSString stringWithFormat:@"%.0f",time] integerValue] == duration) {
+            
+        }else{
+            duration = [[NSString stringWithFormat:@"%.0f",time] integerValue];
+            NSString * dataKey = [NSString stringWithFormat:@"key_%.0f",time];
+            DanMuData * data = [self.danMu.DMKu objectForKey:dataKey];
+            NSLog(@"%@-%@",dataKey,data);
+            if (data) {
+                [_renderer receive:[self walkTextSpriteDescriptorWithDirection:BarrageWalkDirectionR2L DanMuData:data]];
+            }
+        }
     }
 }
 
@@ -464,6 +513,8 @@
     NSURL * videoUrl = [NSURL URLWithString:videoUrlString];
     luxunSay(@"🎬选中了将要播放的视频：《%@》第[%li]话",self.bangumi.title,index+1);
     self.playerView.videoURL = videoUrl;
+    _bangumi.cur = ((Set*)self.bangumi.sets[index]).set;
+    [self getDM];
 }
 
 - (void)sourceReset

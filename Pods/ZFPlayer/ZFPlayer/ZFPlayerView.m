@@ -564,6 +564,9 @@ typedef NS_ENUM(NSInteger, PanDirection){
             CMTime duration             = self.playerItem.duration;
             CGFloat totalDuration       = CMTimeGetSeconds(duration);
             [self.controlView.progressView setProgress:timeInterval / totalDuration animated:NO];
+            if ([self.delegate respondsToSelector:@selector(ZFPlayer:timeChanged:)]) {
+                [self.delegate ZFPlayer:self timeChanged:CMTimeGetSeconds([_player currentTime])];
+            }
             
         } else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) {
             

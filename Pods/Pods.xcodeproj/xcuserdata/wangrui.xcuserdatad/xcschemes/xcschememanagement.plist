@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BarrageRenderer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,17 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>232702BF9FD276E8BAD927AC77038FAD</key>
+		<key>26D2D04E12A812EE705B65C20B2C0841</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3481BF5526BA90F392FB700EDE64E476</key>
+		<key>47698ED329A2F0CD20C9D72807872AA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>474D1CCF71559AF8095D2FD500BA83A9</key>
+		<key>4F6B24B67697415694B7118F82B30C65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58F7C1F2FFC3185D81D5E62253C10F9E</key>
+		<key>6413B8429BCC2DEC941B12D03777A923</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75B538724B4FFF027F6789992107BA9E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<key>70BC44266C6FFE30D2C57129458E070B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,22 +132,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97F95F228C20E66D5DDCB98225A4B189</key>
+		<key>979F32B70C2E78213CA79B1E2BAAD940</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A542EF5F399EB5D48E594536B97C985E</key>
+		<key>BED8A336C8A285C057115BB2145DAB46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D15A0625E06F5B1817FDC85F351F6227</key>
+		<key>CAD7304CA1146DE03BA003A3E67DC187</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F086777132B9F3F949968E61C50C0CB9</key>
+		<key>D6025CBAD5A497839F7DC2E813757DA2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9DB823FD7F158E21E5AED1D77BB4673</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6D4FF0696CFAE8E64FD8AD6827F19A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

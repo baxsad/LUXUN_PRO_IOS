@@ -496,6 +496,10 @@ static GDAction *instance       = nil;
         
     }
     
+    if (req.APPENDURL.isNotEmpty) {
+        url = [url stringByAppendingString:req.APPENDURL];
+    }
+    
     return url;
 }
 

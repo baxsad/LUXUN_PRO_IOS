@@ -110,18 +110,20 @@
     [str appendString:@" "];
     
     if (month>=3 && month<=5) {
-         [str appendString:@"春"];
+        [str appendString:@"春"];
+        return str;
     }
     if (month>=6 && month<=8) {
         [str appendString:@"夏"];
+        return str;
     }
     if (month>=9 && month<=11) {
         [str appendString:@"秋"];
+        return str;
     }else{
         [str appendString:@"冬"];
+        return str;
     }
-    
-    return str;
 }
 
 

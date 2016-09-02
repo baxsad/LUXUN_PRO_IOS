@@ -48,6 +48,8 @@ typedef void(^listenCallBack)(GDReq * _Nonnull req);
 @property(nonatomic,strong,nullable)NSString                   * PATH;
 /** 追加的路径 */
 @property(nonatomic,strong,nullable)NSString                   * APPENDPATH;
+/** 追加的URL */
+@property(nonatomic,strong,nullable)NSString                   * APPENDURL;
 /** 其他路径 */
 @property(nonatomic,strong,nullable)NSString                   * STATICPATH;
 /** 提交方式 (GET/POST)*/
